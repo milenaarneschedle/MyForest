@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    New Achievement
+{% endblock %}
+
+{% block h1 %}
+    New Achievement
+{% endblock %}
+
+{% block main %}
+    <form action="/newachievement" method="post">
+        <div class="grid">
+            <select class="form-select mx-auto" name="folder">
+                <option disabled selected>Choose Folder</option>
+                {% for foldername in foldernames %}
+                    <option value="{{foldername['foldername']}}">{{foldername['foldername']}}</option>
+                {% endfor %}
+            </select>
+            <label for="newfolder" class="margin"> or </label>
+            <input autocomplete="off" class="form-control mx-auto w-auto" id="newfolder" name="newfolder" placeholder="Create new folder" type="text">
+        </div>
+        <div>
+           <input autocomplete="off" autofocus class="form-control mx-auto" id="newachievement" name="newachievement" placeholder="Describe your achievement" type="text">
+           <button type="submit">Save</button>
+        </div>
+    </form>
+
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+          What does the fox say?
+        </button>
+      </h2>
+      <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <div class="text">
+            <h4>You are the only person you can compare yourself to.</h4><br>
+            <p>
+                When we think of achievements, we tend to think about grades or degrees we got, amounts of miles we ran or weight we lost.
+                However, what does or does not count as an achievement depends a lot on our situation.
+                For a professional athlete, winning a trophy can be as much of an achievement as taking the first steps after a long injury.
+                For a person with depression, being able to get out of bed or having the courage to ask somebody for help are huge achievements.
+                Landing our dream job at 40 is as much of an achievement as landing our dream job at 18. Or yes, getting just any job after being unemployed for a long time
+                <br><br>Any more examples? Sure!<br>
+
+                <ul>
+                    <li><img src="/static/images/fox.png" alt="fox"> I finally got married to the person I love.</li>
+                    <li><img src="/static/images/fox.png" alt="fox"> Today, I finally filed for divorce.</li>
+                </ul>
+                <ul>
+                    <li><img src="/static/images/fox.png" alt="fox"> I took time to see my family and spend time with my siblings</li>
+                    <li><img src="/static/images/fox.png" alt="fox"> I stood up for myself when my parents tried to talk me down.</li>
+                    <li><img src="/static/images/fox.png" alt="fox"> I apologized to somebody I hurt</li>
+                    <li><img src="/static/images/fox.png" alt="fox"> I cut contact with somebody who keeps hurting me</li>
+                </ul>
+                <ul>
+                    <li><img src="/static/images/fox.png" alt="fox"> I accepted an invitation and stepped out of my comfort zone</li>
+                    <li><img src="/static/images/fox.png" alt="fox"> I declined an invitation and got some rest/me-time instead.</li>
+                </ul>
+                The achievements you list here are not necessarily about being productive and self-improve. Modern life pressures us enough on that.
+                It can even be an achievement to realize that a previous achievement actually did not make you feel good and deciding to do it differently next time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

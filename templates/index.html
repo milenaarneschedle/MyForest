@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  My Folders
+{% endblock %}
+
+{% block h1 %}
+  My Folders
+{% endblock %}
+
+{% block main %}
+  {% if not folders %}
+    <p class="line">You have no folders yet. <a href="/newachievement">Write down an achievement</a> to create a folder!</p>
+  {% endif %}
+
+  <div class="grid">
+    {% for folder in folders %}
+      <form action="/openfolder/{{ folder['foldername'] }}" method="get">
+        <input type="hidden" name="foldername" value="{{ folder['foldername'] }}">
+        <button class="folder" type="submit">{{ folder['foldername'] }}</button>
+      </form>
+    {% endfor %}
+  </div>
+{% endblock %}
+

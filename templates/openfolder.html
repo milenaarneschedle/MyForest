@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{foldername}} - My Folders
+{% endblock %}
+
+{% block main %}
+    <div class="folder-inside">
+        <div class="titles-folder">
+            <div id="seendiv">
+                <h1>{{foldername}}</h1>
+                <button onclick="showhidden()">Rename</button>
+            </div>
+            <div id="hiddendiv">
+                <form action="/rename/{{ foldername }}" method="post">
+                    <input autocomplete="off" class="form-control mx-auto w-auto" id="newname" name="newname" type="text" value="{{ foldername }}">
+                    <button type="submit">Rename</button>
+                </form>
+            </div>
+        </div>
+        <form action="/openfolder/{{foldername}}" method="post">
+            <div class="grid">
+                <select class="form-select mx-auto" name="folder">
+                    <option disabled selected>Move to Folder</option>
+                    {% for folder in folders %}
+                        <option value="{{folder['foldername']}}">{{folder['foldername']}}</option>
+                    {% endfor %}
+                </select>
+                <label for="newfolder" class="margin"> or </label>
+                <input autocomplete="off" class="form-control mx-auto w-auto" id="newfolder" name="newfolder" placeholder="Create new folder" type="text">
+                <button type="submit">Move</button>
+            </div>
+
+            <table>
+                {% for sentence in sentences %}
+                    <tr>
+                        <td class="width">
+                            <input type="checkbox" name="sentences_chosen" value="{{sentence['sentence']}}">
+                        </td>
+                        <td>{{ sentence['sentence'] }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,184 @@
+/*navbar*/
+
+.navbar
+{
+    background: url("../static/images/forest5.png");
+    background-size: contain;
+    background-color: #3E7528;
+}
+
+nav .navbar-brand, .navbar-brand:hover
+{
+    font-size: xx-large;
+    color: #FE8F03;
+}
+
+.nav-link, .nav-link:hover
+{
+    color: #FE8F03;
+    font-size: 20px;
+}
+
+
+/* body */
+
+body
+{
+    color: #FE8F03;
+    background-image: linear-gradient(#113C00, #301801);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* inputs, buttons, accordion */
+
+.form-control, .form-control:focus, .form-select, button, .accordion-body, .accordion-button
+{
+    background-color: transparent;
+    border: 2px solid #FE8F03;
+    border-radius: 6px;
+    margin: 1.3rem;
+    color: #FE8F03;
+    padding: 7px 10px 7px;
+}
+
+.form-select
+{
+    width: 13rem;
+}
+
+button:hover
+{
+    background-color: #FE8F03;
+    color: #301801;
+}
+
+.accordion-body, .accordion-button, #newachievement, #edit, .line
+{
+    width: 60%;
+    margin: auto;
+}
+
+input[type=text]:-moz-placeholder, input[type=password]:-moz-placeholder
+{
+   color: #FE8F03;
+}
+
+input[type=text]:-ms-input-placeholder, input[type=password]:-ms-input-placeholder
+{
+    color: #FE8F03;
+}
+
+input[type=text]::-moz-placeholder, input[type=password]::-moz-placeholder
+{
+    color: #FE8F03;
+}
+
+input[type=text]::-webkit-input-placeholder, input[type=password]::-webkit-input-placeholder
+{
+    color: #FE8F03;
+}
+
+
+/* grids*/
+
+.grid-forest
+{
+    margin: 1rem;
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+}
+
+.grid
+{
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+
+/* folders */
+
+.folder
+{
+    width: 14rem;
+    height: 10rem;
+    background: url("../static/images/trees.png") no-repeat;
+    background-size: contain;
+    overflow-wrap: break-word;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.folder-inside
+{
+    border-radius: 10px;
+    margin: auto;
+    width: 65%;
+    padding: 0 0 2rem;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.titles-folder
+{
+    background: url("../static/images/trees.png") no-repeat;
+    background-size: contain;
+    background-color: rgba(117, 117, 117, 0.2);
+    background-position: center;
+    padding: 1rem;
+    overflow-wrap: break-word;
+    border-radius: 10px;
+}
+
+/* tables */
+
+table, th, tr, td
+{
+    margin: auto;
+    table-layout: fixed;
+    width: 90%;
+    overflow-wrap: break-word;
+    text-align: left;
+    padding: 1.5rem;
+    accent-color: #FE8F03;
+}
+
+/* other */
+
+.width
+{
+    width: 10%;
+}
+
+.margin
+{
+    margin: 1rem;
+    padding: 1rem;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+img
+{
+    height: auto;
+    width: 60px;
+}
+
+#hiddendiv
+{
+    display: none;
+}
+
+a
+{
+    color: #FE8F03;
+}
+
+.text
+{
+    margin: 1rem;
+    text-align: left;
+}

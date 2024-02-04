@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block h1 %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+        <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+        <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Confirm Password" type="password">
+        <input autocomplete="off" class="form-control mx-auto w-auto" id="question" name="question" placeholder="Security Question" type="text">
+        <input autocomplete="off" class="form-control mx-auto w-auto" id="answer" name="answer" placeholder="Answer" type="text">
+        <button type="submit">Register</button>
+    </form>
+    
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+          What does the fox say?
+        </button>
+      </h2>
+      <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <div class="text">
+            <p>Make sure to choose a question only you or a very limited amount of people you trust know! Do not choose anything a stranger could know or find out.<img src="/static/images/fox.png" alt="fox"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

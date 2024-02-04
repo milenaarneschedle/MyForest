@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  My Achievements
+{% endblock %}
+
+{% block h1 %}
+  My Achievements
+{% endblock %}
+
+{% block main %}
+  {% if not achievements %}
+    <p class="line">We are sure you have achieved something. You have just not documented it yet. <a href="/newachievement">Write down an achievement</a> to feel good about yourself!</p>
+  {% else %}
+
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+          What does the fox say?
+        </button>
+      </h2>
+      <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <div class="text">
+            <h4>Why can I not delete old achievements?</h4><br>
+            <p>Sometimes, our view on what is or is not an achievement, changes. You might have a moment where some achievements you wrote down in the past, seem embarassing or not productive enough. It could also happen that we did something that made us feel good an proud of ourselves and at some point we notice we have actually ignored our needs to meet an outside expectation of what should be productive and achieveable. Or we noticed we have hurt somebody with a bahavior that felt good but was not justified. In this case it could become attractive to delete those memories and start fresh. But just like in life, we cannot make those actions undone. And they made us feel good about ourselves in the moment we wrote them down after all. If this happens, think about it this way: You noticed the "mistake", thought it through, forgave yourself for it and decided to do it differently next time. Congratulations, you got yourself another achievement to grow your forest! <img src="/static/images/fox.png" alt="fox"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th class="width">Date</th>
+          <th class="width">Reward</th>
+          <th style="width: 20%">Folder</th>
+          <th style="width: 50%">Achievement</th>
+          <th class="width"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for achievement in achievements %}
+          <tr>
+            <td>{{achievement['date']}}</td>
+              {% if 'tree' in achievement['reward'] %}
+                <td><img src="/static/images/tree2.png" alt="tree"></td>
+              {% elif 'bird' in achievement['reward'] %}
+                <td><img src="/static/images/bird.png" alt="bird"></td>
+              {% else %}
+                <td><img src="/static/images/fox.png" alt="fox"></td>
+              {% endif %}
+            <td><b>{{achievement['foldername']}}</b></td>
+            <td>{{achievement['sentence']}}</td>
+            <form action="/edit/{{achievement['sentence']}}" method="get">
+              <td><button type="submit">Edit</button> </td>
+            </form>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% endif %}
+{% endblock %}

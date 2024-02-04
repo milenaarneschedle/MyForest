@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit
+{% endblock %}
+
+{% block h1 %}
+    Edit your achievements
+{% endblock %}
+
+{% block main %}
+    <form action="/edit/{{sentence}}" method="post">
+        <input autocomplete="off" autofocus class="form-control mx-auto" id="edit" name="edit" type="text" value="{{sentence}}">
+        <button type="submit">Edit</button>
+    </form>
+{% endblock %}

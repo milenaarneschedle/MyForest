@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Forgot Password - Security Question
+{% endblock %}
+
+{% block h1 %}
+    Security Question
+{% endblock %}
+
+
+{% block main %}
+    <p>To create a new password for <b>{{username}}</b>, please answer your security question</p>
+    <h6><b>{{question}}?</b></h6>
+    <form action="/question/{{username}}" method="post">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="answer" name="answer" placeholder="Answer" type="text">
+        <input name="name" type="hidden" value="{{username}}">
+        <button type="submit">Answer</button>
+    </form>
+{% endblock %}

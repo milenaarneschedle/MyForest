@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My Forest
+{% endblock %}
+
+{% block h1 %}
+    My Forest
+{% endblock %}
+
+{% block main %}
+    <p class="line">Every time you <a href="/newachievement">write down</a> something good you have done for yourself, you plant a tree. The more you keep up doing good things for yourself and giving yourself credit for it, you grow your own forest! With every tenth achievement, you'll hatch a bird that lives in your forest. And with every hundredth achievement, a fox will call your forest its home.</p>
+
+    <div class="grid-forest">
+        {% for reward in rewards %}
+            {% if 'bird' in reward['reward'] %}
+                <img src="/static/images/bird.png" alt="bird">
+            {% elif 'tree' in reward['reward'] %}
+                <img src="/static/images/tree2.png" alt="tree">
+            {% else %}
+                <img src="/static/images/fox.png" alt="fox">
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}
